@@ -1,0 +1,10 @@
+---
+plugin: cloudscale
+keyed_groups:
+  - separator: ""
+    key: cloudscale.image.slug | lower
+
+groups:
+  webservers: inventory_hostname.startswith('web')
+  cloud: true
+  cloudscale: true

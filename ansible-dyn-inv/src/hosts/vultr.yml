@@ -1,0 +1,13 @@
+---
+plugin: vultr
+keyed_groups:
+  - separator: ""
+    key: os | lower | regex_replace(' x64.*','')
+  - prefix: vultr_region
+    key: region | lower
+
+groups:
+  cloud: true
+  webservers: inventory_hostname.startswith('web')
+# not needed as vultr already has a default group vultr
+#  vultr: true

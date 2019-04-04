@@ -1,0 +1,16 @@
+---
+- hosts: vultr
+  gather_facts: no
+  tasks:
+  - vultr_server:
+      name: "{{ inventory_hostname }}"
+      state: absent
+    delegate_to: localhost
+
+- hosts: cloudscale
+  gather_facts: no
+  tasks:
+  - cloudscale_server:
+      name: "{{ inventory_hostname }}"
+      state: absent
+    delegate_to: localhost
